@@ -1,0 +1,61 @@
+---
+comment: "configuration file for imap_warn, which sends alerts if you receive mail from certain people"
+server: address.of.server.com
+port: '993'
+username: username
+password: password
+allowable_verbs:
+    - 'alert'
+    - 'delete'
+    - 'delete_day_old'
+    - 'delete_old' 
+    - 'markread'
+    - 'speak'
+    - 'warn'
+comment: "alert is not the same as with imap_warn"
+folders:
+    directory:
+        verb:
+            field:
+                - terms
+    purdue_pm:
+        markread:
+            subject: 
+                - "Python"
+        delete:
+            subject:
+                - 'perl is dead'
+    INBOX:
+        markread:
+            subject: 
+                - "Big Data"
+                - "Donate"
+            from: 
+                - me@address.com
+        delete:
+            from:
+                - coworker_4@host.com
+                - '@aeresras.top'
+            subject:
+                - 'belly fat'
+                - 'cannabis'
+                - 'certified'
+                - 'drill her'
+        delete_old:
+            from:
+                - '@bestbuy.com'
+            subject:
+                - 'hacklafayette'
+        warn:
+            from:
+                - boss@address.com
+                - hr@address.com
+                - coworker_1@host.com
+                - coworker_2@host.com
+                - coworker_3@host.com
+                - coworker_5@host.com
+                - sibling@host.com
+            subject:
+                - '"Get Rich Quick!"'
+            comment:
+                - "Doesn't handle wildcards"

@@ -1,0 +1,22 @@
+---
+comment: "configuration file for imap_warn, which sends alerts if you receive mail from certain people"
+server: address.of.server.com
+port: '993'
+username: username
+password: password
+message: what is said when you need to be notified
+folders:
+    INBOX:
+        alert:
+            from:
+                - boss@address.com
+                - hr@address.com
+                - coworker_1@host.com
+                - coworker_2@host.com
+                - coworker_3@host.com
+                - coworker_5@host.com
+                - sibling@host.com
+            subject:
+                - '"Get Rich Quick!"'
+            comment:
+                - "Doesn't handle wildcards"
